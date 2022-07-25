@@ -54,12 +54,6 @@ class adminController extends Controller
     {
         $id = $request->id;
 
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6',
-            'password_confirmation' => 'required|string|min:6|same:password',
-        ]);
         $data = [
             'name' => $request->name,
             'email' => $request->email,
